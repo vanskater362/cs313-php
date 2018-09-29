@@ -1,3 +1,5 @@
+<?php
+print('
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -17,8 +19,8 @@
 
     <div class="container">
       <div class="masthead">
-        <h3 class="text-muted">Anthony Wagner's Personal Page</h3>
-        <nav>
+        <h3 class="text-muted">Anthony Wagner\'s Personal Page</h3>
+       <nav>
           <ul class="nav nav-justified">
             <li class="active"><a href="index.html">Home</a></li>
             <li><a href="assignments.html">Assignments</a></li>
@@ -53,12 +55,12 @@
 
        </div>
         <div class="col-lg-4">    
-          <?php
-            echo '<h2>PHP Section</h2>'
-            echo date('l, F jS, Y');</p> 
+            <h2>PHP Section</h2>
+            date(\'l, F jS, Y\');</p> 
           ?>
         </div>
       </div>
     </div>
   </body>
-</html>
+</html>')
+?>
