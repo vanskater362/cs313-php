@@ -1,5 +1,4 @@
-
-<?php
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -54,11 +53,12 @@
 
        </div>
         <div class="col-lg-4">    
-            <h2>PHP Section</h2>
-            <p>echo date('l, F jS, Y');</p> 
+          <?php
+            echo '<h2>PHP Section</h2>'
+            echo date('l, F jS, Y');</p> 
+          ?>
         </div>
       </div>
     </div>
   </body>
 </html>
-?>
