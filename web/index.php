@@ -1,4 +1,5 @@
 <?php
+$date = date('l, F jS, Y');
 print('
 <!DOCTYPE html>
 <html lang="en">
@@ -56,8 +57,7 @@ print('
        </div>
         <div class="col-lg-4">    
             <h2>PHP Section</h2>
-            date(\'l, F jS, Y\');</p> 
-          ?>
+            <p>$date</p> 
         </div>
       </div>
     </div>
