@@ -5,24 +5,37 @@ CREATE TABLE public.user
    password VARCHAR(100) NOT NULL
 );
 
-CREATE TABLE public.job_name
+CREATE TABLE job_name
 (
    id SERIAL NOT NULL PRIMARY KEY,
    name VARCHAR(100) NOT NULL
 );
 
-CREATE TABLE public.job_number
+CREATE TABLE job_number
 (
    id SERIAL NOT NULL PRIMARY KEY,
    number VARCHAR(100) NOT NULL UNIQUE,
-   name INT NOT NULL REFERENCES public.job_name(id)
+   name INT NOT NULL REFERENCES job_name(id)
 );
 
-CREATE TABLE public.notes
+CREATE TABLE notes
 (
    id SERIAL NOT NULL PRIMARY KEY,
    user_id INT NOT NULL REFERENCES public.user(id),
-   number_id INT NOT NULL REFERENCES public.job_number(id),
-   name_id INT NOT NULL REFERENCES public.job_name(id),
+   number_id INT NOT NULL REFERENCES job_number(id),
+   name_id INT NOT NULL REFERENCES job_name(id),
    note_text TEXT
 );
+
+
+
+
+
+INSERT INTO public.user (id, username, password) VALUES(DEFAULT, 'Tonyw','Tonyw'), (DEFAULT, 'Test', 'Testpw');
+INSERT INTO public.job_name (id, name) VALUES(DEFAULT, 'Test Job Name 1'), (DEFAULT, 'Test Job Name 2');
+INSERT INTO public.job_number (id, number, name) VALUES(DEFAULT, '18-1000', (SELECT id FROM job_name WHERE id=1) ), (DEFAULT, '18-1100', (SELECT id FROM job_name WHERE id=2));
+INSERT INTO public.notes (id, user_id, number_id, name_id, note_text) 
+VALUES (DEFAULT, (SELECT id FROM public.user WHERE id=1), (SELECT id FROM job_number WHERE id=2), (SELECT id FROM job_name WHERE id=1), 'This is a note from user Tonyw!'), 
+       (DEFAULT, (SELECT id FROM public.user WHERE id=2), (SELECT id FROM job_number WHERE id=2), (SELECT id FROM job_name WHERE id=1), 'This is a note from user Test.'),
+       (DEFAULT, (SELECT id FROM public.user WHERE id=1), (SELECT id FROM job_number WHERE id=3), (SELECT id FROM job_name WHERE id=2), 'This is a note from user Tonyw!'), 
+       (DEFAULT, (SELECT id FROM public.user WHERE id=2), (SELECT id FROM job_number WHERE id=3), (SELECT id FROM job_name WHERE id=2), 'This is a note from user Test.');
