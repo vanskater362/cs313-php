@@ -41,7 +41,7 @@ $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPass
       </div>
 <div>
 
-<div class="container" style="background: lightblue">
+<div class="row" style="background: lightblue">
    <hr>
 <?php
 
