@@ -18,3 +18,4 @@
 #nlabel { display: table-cell; text-align: left}
 #ninput { display: table-cell; }
 #createNew { visibility: hidden; }
+#search { visibility: hidden; }
