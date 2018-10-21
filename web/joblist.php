@@ -30,7 +30,7 @@ $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPass
       <div class="masthead">
         <h3 class="text-muted">Job List</h3>
        <nav>
-          <ul class="nav nav-justified\">
+          <ul class="nav nav-justified">
             <li class="active"><a href="index.html">Home</a></li>
             <li><a href="assignments.html">Assignments</a></li>
             <li><a href="content\files\Anthony Wagner Resume.pdf">Resume</a></li>
