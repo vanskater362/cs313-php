@@ -90,15 +90,14 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
 <script>
    function showCreate() {
      var element = document.getElementById('createBTN');
-      
-      if(element.innerHTML == "Hide Create New"){
-         document.getElementById('createNew').style.visibility = "hidden";
-         document.getElementById('createBTN').innerHTML = "Create New Job";
-      }
-
       if(element.innerHTML == "Create New Job") {
          document.getElementById('createNew').style.visibility = "visible";
          document.getElementById('createBTN').innerHTML = "Hide Create New";
+      }
+   
+      else {
+         document.getElementById('createNew').style.visibility = "hidden";
+         document.getElementById('createBTN').innerHTML = "Create New Job";
       }
    }
 </script>
