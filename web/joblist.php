@@ -22,6 +22,7 @@ $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPass
     <link rel="stylesheet" href="styles.css"/> 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
 	<title>Job List</title>
 </head>
 
@@ -86,7 +87,7 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
       <label id="nlabel" placeholder="76100" for="zip">Zip:</label>
       <input id="ninput" type="text" name="zip">
       </p>
-      <input type="submit" name="submit">
+      <input type="submit" name="submit" value="Add Job">
    </form>
 </div>
 <div class="col-lg-4" id="search" style="background: lightgreen">
@@ -117,36 +118,8 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
       <label id="nlabel" placeholder="76100" for="zip">Zip:</label>
       <input id="ninput" type="text" name="zip">
       </p>
-      <input type="submit" name="Search">
+      <input type="submit" name="search" value="Search">
    </form>
 </div>
 </div>
 </body>
-
-<script>
-   function showCreate() {
-     var element = document.getElementById('createBTN');
-      if(element.innerHTML == "Create New Job") {
-         document.getElementById('createNew').style.visibility = "visible";
-         document.getElementById('createBTN').innerHTML = "Hide Create New";
-      }
-   
-      else {
-         document.getElementById('createNew').style.visibility = "hidden";
-         document.getElementById('createBTN').innerHTML = "Create New Job";
-      }
-   }
-
-   function showSearch() {
-     var element = document.getElementById('searchBTN');
-      if(element.innerHTML == "Search") {
-         document.getElementById('search').style.visibility = "visible";
-         document.getElementById('searchBTN').innerHTML = "Hide Search";
-      }
-   
-      else {
-         document.getElementById('search').style.visibility = "hidden";
-         document.getElementById('searchBTN').innerHTML = "Search";
-      }
-   }
-</script>
