@@ -15,5 +15,5 @@
 
 #nform  { display: table;      }
 #np     { display: table-row;  }
-#nlabel { display: table-cell; text-align: right}
+#nlabel { display: table-cell; text-align: left}
 #ninput { display: table-cell; }

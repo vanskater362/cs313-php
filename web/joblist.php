@@ -49,11 +49,11 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
 {
    echo '<ul>';
 	echo '<li><strong>' . $row['number'] . ' ' . $row['name'];
-	echo '</ul>';
+   echo '</ul><hr>';
 }
 ?>
 </div>
-<div style="background: lightgreen">
+<div id="createNew" style="background: lightgreen">
    <h1>Create new Job</h1>
    <br>
    <form id="nform" method="post" action="#" style="display">
@@ -81,6 +81,7 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
       <label id="nlabel" for="zip">Zip:</label>
       <input id="ninput" type="text" name="zip">
       </p>
+      <input type="submit" name="submit">
    </form>
 </div>
 </body>
