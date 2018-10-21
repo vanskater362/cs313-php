@@ -33,8 +33,6 @@ $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPass
           <ul class="nav nav-justified">
             <li class="active"><a href="index.html">Home</a></li>
             <li><a href="assignments.html">Assignments</a></li>
-            <li><a href="content\files\Anthony Wagner Resume.pdf">Resume</a></li>
-            <li><a href="mailto:vanskater362@gmail.com">Contact</a></li>
           </ul>
         </nav>
       </div>
@@ -47,8 +45,8 @@ $statement->execute();
 
 while ($row = $statement->fetch(PDO::FETCH_ASSOC))
 {
-	echo '<p>';
-	echo '<strong>' . $row['number'] . ' ' . $row['name'];
-	echo '</p>';
+	echo '<ul>';
+	echo '<li><strong>' . $row['number'] . ' ' . $row['name'];
+	echo '</ul>';
 }
 ?>
