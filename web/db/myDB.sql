@@ -15,7 +15,7 @@ CREATE TABLE job_number
 (
    id SERIAL NOT NULL PRIMARY KEY,
    number VARCHAR(100) NOT NULL UNIQUE,
-   name INT NOT NULL REFERENCES job_name(id)
+   name INT NOT NULL REFERENCES job_name(id),
 );
 
 CREATE TABLE notes
@@ -25,6 +25,16 @@ CREATE TABLE notes
    number_id INT NOT NULL REFERENCES job_number(id),
    name_id INT NOT NULL REFERENCES job_name(id),
    note_text TEXT
+);
+
+CREATE TABLE address
+(
+   id SERIAL NOT NULL PRIMARY KEY,
+   street VARCHAR(100) DEFAULT 'street',
+   city VARCHAR(50) DEFAULT 'city',
+   state VARCHAR(20) DEFAULT 'Texas',
+   zip INT DEFAULT 76000,
+   number_id INT NOT NULL REFERENCES job_number(id)
 );
 
 
@@ -39,3 +49,6 @@ VALUES (DEFAULT, (SELECT id FROM public.user WHERE id=1), (SELECT id FROM job_nu
        (DEFAULT, (SELECT id FROM public.user WHERE id=2), (SELECT id FROM job_number WHERE id=2), (SELECT id FROM job_name WHERE id=1), 'This is a note from user Test.'),
        (DEFAULT, (SELECT id FROM public.user WHERE id=1), (SELECT id FROM job_number WHERE id=3), (SELECT id FROM job_name WHERE id=2), 'This is a note from user Tonyw!'), 
        (DEFAULT, (SELECT id FROM public.user WHERE id=2), (SELECT id FROM job_number WHERE id=3), (SELECT id FROM job_name WHERE id=2), 'This is a note from user Test.');
+INSERT INTO address (id, street, city, state, zip, number_id)
+VALUES (DEFAULT, '123 Streety', 'Nowhere', DEFAULT, 76008, (SELECT id FROM job_number WHERE id=2)),
+       (DEFAULT, '7890 Samford', 'Hereville', DEFAULT, 76118, (SELECT id FROM job_number WHERE id=3));

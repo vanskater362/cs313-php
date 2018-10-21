@@ -53,6 +53,7 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
 ?>
 </div>
 <div>
+   <br>
    <form method="post" action="#">
       <label for="number">Job Number:</label>
       <input type="text" name="jobNumber">
