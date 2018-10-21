@@ -35,7 +35,7 @@ $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPass
             <li class="active"><a href="index.html">Home</a></li>
             <li><a href="assignments.html">Assignments</a></li>
             <li><button id="createBTN" onclick="showCreate()" type="button">Create New Job</button>
-            <li><button id="search" onclick="showSearch()" type="button">Search</button>
+            <li><button id="searchBTN" onclick="showSearch()" type="button">Search</button>
           </ul>
         </nav>
       </div>
@@ -86,7 +86,7 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
       <label id="nlabel" placeholder="76100" for="zip">Zip:</label>
       <input id="ninput" type="text" name="zip">
       </p>
-      <input type="submit" name="Create New Job">
+      <input type="submit" name="submit">
    </form>
 </div>
 <div class="col-lg-4" id="search" style="background: lightgreen">
@@ -134,6 +134,19 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
       else {
          document.getElementById('createNew').style.visibility = "hidden";
          document.getElementById('createBTN').innerHTML = "Create New Job";
+      }
+   }
+
+   function showSearch() {
+     var element = document.getElementById('searchBTN');
+      if(element.innerHTML == "Search") {
+         document.getElementById('search').style.visibility = "visible";
+         document.getElementById('searchBTN').innerHTML = "Hide Search";
+      }
+   
+      else {
+         document.getElementById('search').style.visibility = "hidden";
+         document.getElementById('searchBTN').innerHTML = "Search";
       }
    }
 </script>
