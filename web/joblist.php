@@ -41,6 +41,7 @@ $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPass
 <div>
 
 <div class="container" style="background: lightblue">
+   <hr>
 <?php
 
 $statement = $db->prepare("SELECT job_number.number, job_name.name FROM job_name INNER JOIN job_number ON job_number.name=job_name.id");
@@ -48,12 +49,13 @@ $statement->execute();
 
 while ($row = $statement->fetch(PDO::FETCH_ASSOC))
 {
-   echo '<hr><ul>';
+   echo '<ul>';
 	echo '<li><strong>' . $row['number'] . ' ' . $row['name'];
    echo '</ul><hr>';
 }
 ?>
 </div>
+<!-- may need to move the location of this when the list gets longer -->
 <div id="createNew" style="background: lightgreen">
    <h1>Create new Job</h1>
    <br>
