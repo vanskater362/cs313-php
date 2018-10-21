@@ -34,7 +34,7 @@ $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPass
           <ul class="nav nav-justified">
             <li class="active"><a href="index.html">Home</a></li>
             <li><a href="assignments.html">Assignments</a></li>
-            <li><button onclick="showCreate()" type="button">Create New Job</button>
+            <li><button id="createBTN" onclick="showCreate()" type="button">Create New Job</button>
           </ul>
         </nav>
       </div>
@@ -89,6 +89,13 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
 
 <script>
    function showCreate() {
-      document.getElementById('createNew').style.visibility = "visible";
+      if(document.getElementById('createNew').style.visibility == "hidden") {
+         document.getElementById('createNew').style.visibility = "visible";
+         document.getElementById('createNew').innerHTML = "Hide Create New";
+      }
+      if(document.getElementById('createNew').style.visibility = "visible"){
+         document.getElementById('createNew').style.visibility = "hidden";
+         document.getElementById('createNew').innerHTML = "Create New";
+      }
    }
 </script>
