@@ -38,12 +38,12 @@ $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPass
       </div>
 <div>
 
+<div class="container" style="background: lightblue">
 <?php
 
 $statement = $db->prepare("SELECT job_number.number, job_name.name FROM job_name INNER JOIN job_number ON job_number.name=job_name.id");
 $statement->execute();
 
-echo '<p>&emsp Job # &emsp Job Name</p>';
 while ($row = $statement->fetch(PDO::FETCH_ASSOC))
 {
    echo '<ul>';
@@ -51,3 +51,15 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
 	echo '</ul>';
 }
 ?>
+</div>
+<div>
+   <form method="post" action="#">
+      <label for="number">Job Number:</label>
+      <input type="text" name="jobNumber">
+      <br>
+      <label for="name">Job Name:</label>
+      <input type="text" name="name">
+      <br>
+   </form>
+</div>
+</body>
