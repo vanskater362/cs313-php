@@ -89,13 +89,16 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
 
 <script>
    function showCreate() {
-      if(document.getElementById('createNew').style.visibility == "hidden") {
-         document.getElementById('createNew').style.visibility = "visible";
-         document.getElementById('createNew').innerHTML = "Hide Create New";
-      }
-      if(document.getElementById('createNew').style.visibility = "visible"){
+     var element = document.getElementById('createBTN');
+      
+      if(element.innerHTML == "Hide Create New"){
          document.getElementById('createNew').style.visibility = "hidden";
-         document.getElementById('createNew').innerHTML = "Create New";
+         document.getElementById('createBTN').innerHTML = "Create New Job";
+      }
+
+      if(element.innerHTML == "Create New Job") {
+         document.getElementById('createNew').style.visibility = "visible";
+         document.getElementById('createBTN').innerHTML = "Hide Create New";
       }
    }
 </script>
