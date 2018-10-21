@@ -13,3 +13,7 @@
    background-color: greenyellow;
 }
 
+#nform  { display: table;      }
+#np     { display: table-row;  }
+#nlabel { display: table-cell; text-align: right}
+#ninput { display: table-cell; }

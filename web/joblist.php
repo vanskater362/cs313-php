@@ -18,7 +18,8 @@ $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPass
 <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>   
+    <link rel="stylesheet" href="styles.css"/> 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<title>Job List</title>
@@ -52,15 +53,34 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
 }
 ?>
 </div>
-<div>
+<div style="background: lightgreen">
+   <h1>Create new Job</h1>
    <br>
-   <form method="post" action="#">
-      <label for="number">Job Number:</label>
-      <input type="text" name="jobNumber">
-      <br>
-      <label for="name">Job Name:</label>
-      <input type="text" name="name">
-      <br>
+   <form id="nform" method="post" action="#" style="display">
+      <p id="np">
+      <label id="nlabel" for="number">Job Number:</label>
+      <input id="ninput" type="text" name="jobNumber">
+      </p>
+      <p id="np">
+      <label id="nlabel" for="name">Job Name:</label>
+      <input id="ninput" type="text" name="name">
+      </p>
+      <p id="np">
+      <label id="nlabel" for="street">Street:</label>
+      <input id="ninput" type="text" name="street">
+      </p>
+      <p id="np">
+      <label id="nlabel" for="city">City:</label>
+      <input id="ninput" type="text" name="city">
+      </p>
+      <p id="np">
+      <label id="nlabel" for="State">State:</label>
+      <input id="ninput" type="text" name="state">
+      </p>
+      <p id="np">
+      <label id="nlabel" for="zip">Zip:</label>
+      <input id="ninput" type="text" name="zip">
+      </p>
    </form>
 </div>
 </body>
