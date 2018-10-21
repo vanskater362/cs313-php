@@ -17,3 +17,4 @@
 #np     { display: table-row;  }
 #nlabel { display: table-cell; text-align: left}
 #ninput { display: table-cell; }
+#createNew { visibility: hidden; }

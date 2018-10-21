@@ -34,6 +34,7 @@ $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPass
           <ul class="nav nav-justified">
             <li class="active"><a href="index.html">Home</a></li>
             <li><a href="assignments.html">Assignments</a></li>
+            <li><button onclick="showCreate()" type="button">Create New Job</button>
           </ul>
         </nav>
       </div>
@@ -47,7 +48,7 @@ $statement->execute();
 
 while ($row = $statement->fetch(PDO::FETCH_ASSOC))
 {
-   echo '<ul>';
+   echo '<hr><ul>';
 	echo '<li><strong>' . $row['number'] . ' ' . $row['name'];
    echo '</ul><hr>';
 }
@@ -58,30 +59,36 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
    <br>
    <form id="nform" method="post" action="#" style="display">
       <p id="np">
-      <label id="nlabel" for="number">Job Number:</label>
+      <label id="nlabel" placeholder="Job Number" for="number">Job Number: </label>
       <input id="ninput" type="text" name="jobNumber">
       </p>
       <p id="np">
-      <label id="nlabel" for="name">Job Name:</label>
+      <label id="nlabel" placeholder="Job Name" for="name">Job Name:</label>
       <input id="ninput" type="text" name="name">
       </p>
       <p id="np">
-      <label id="nlabel" for="street">Street:</label>
+      <label id="nlabel" placeholder="street" for="street">Street:</label>
       <input id="ninput" type="text" name="street">
       </p>
       <p id="np">
-      <label id="nlabel" for="city">City:</label>
+      <label id="nlabel" placeholder="City" for="city">City:</label>
       <input id="ninput" type="text" name="city">
       </p>
       <p id="np">
-      <label id="nlabel" for="State">State:</label>
+      <label id="nlabel" placeholder="Texas" for="State">State:</label>
       <input id="ninput" type="text" name="state">
       </p>
       <p id="np">
-      <label id="nlabel" for="zip">Zip:</label>
+      <label id="nlabel" placeholder="76100" for="zip">Zip:</label>
       <input id="ninput" type="text" name="zip">
       </p>
       <input type="submit" name="submit">
    </form>
 </div>
 </body>
+
+<script>
+   function showCreate() {
+      document.getElementById('createNew').style.visibility = "visible";
+   }
+</script>
