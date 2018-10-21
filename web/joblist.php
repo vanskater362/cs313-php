@@ -45,7 +45,8 @@ $statement->execute();
 
 while ($row = $statement->fetch(PDO::FETCH_ASSOC))
 {
-	echo '<ul>';
+   echo 'Job #      Job Name';
+   echo '<ul>';
 	echo '<li><strong>' . $row['number'] . ' ' . $row['name'];
 	echo '</ul>';
 }
