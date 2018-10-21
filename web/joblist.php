@@ -43,9 +43,9 @@ $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPass
 $statement = $db->prepare("SELECT job_number.number, job_name.name FROM job_name INNER JOIN job_number ON job_number.name=job_name.id");
 $statement->execute();
 
+echo '           Job #      Job Name';
 while ($row = $statement->fetch(PDO::FETCH_ASSOC))
 {
-   echo 'Job #      Job Name';
    echo '<ul>';
 	echo '<li><strong>' . $row['number'] . ' ' . $row['name'];
 	echo '</ul>';
