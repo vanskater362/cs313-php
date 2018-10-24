@@ -47,3 +47,5 @@ CREATE TABLE link_topic (
 	topicID INT NOT NULL REFERENCES topic(id)
 );
 
+INSERT INTO scriptures (book, chapter, verse, content) VALUES (book, chapter, verse, content);
+

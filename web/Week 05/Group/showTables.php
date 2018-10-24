@@ -65,7 +65,7 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
    <input id="verseInput" type="text" name="verseText">
    <br>
    <label id="content" for="content">Content: </label>
-   <textarea id="content" rows="3" cols="30"></textarea>
+   <textarea id="content" name="contentText" rows="3" cols="30"></textarea>
    <?php
       $statement = $db->prepare("SELECT id, name FROM topic");
       $statement->execute();
@@ -73,7 +73,7 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
       while ($row = $statement->fetch(PDO::FETCH_ASSOC))
       {
          echo '<p>';
-         echo '<input type="checkbox" name="' . $row['name'] . '" value="' . $row['id'] . '">' . $row['name'] . ':';
+         echo '<input type="checkbox" name="topics[]" value="' . $row['id'] . '">' . $row['name'] . ':';
          echo '</p>';
       }
    ?>
