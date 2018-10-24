@@ -53,5 +53,20 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
 
 </div>
 
+<div>
+<form id="nform" method="post" action="insert.php">
+   <label id="book" for="book">Book: </label>
+   <input id="bookInput" type="text" name="bookText">
+   <br>
+   <label id="chapter" for="chapter">Chapterk: </label>
+   <input id="chapInput" type="text" name="chapText">
+   <br>
+   <label id="versebook" for="verse">Verse: </label>
+   <input id="verseInput" type="text" name="verseText">
+   <br>
+   <label id="content" for="content">Content: </label>
+   <textarea id="content" rows="3" cols="30"></textarea>
+</div>
+
 </body>
 </html>
