@@ -17,7 +17,10 @@ $verse = $_POST['verseText'];
 $content = $_POST['contentText'];
 $topics = $_POST['topics'];
 
-$statement = $db->prepare('INSERT INTO scriptures (book, chapter, verse, content) VALUES (:book, :chapter, :verse, :content');
+//$statement = $db->prepare('INSERT INTO scriptures (book, chapter, verse, content) VALUES (:book, :chapter, :verse, :content');
+
+$query = 'INSERT INTO scripture(book, chapter, verse, content) VALUES(:book, :chapter, :verse, :content)';
+$statement = $db->prepare($query);
 
 $statement->bindValue(':book', $book);
 $statement->bindValue(':chapter', $chapter);
