@@ -31,10 +31,12 @@ $content = $_POST['contentText'];
 $topics = $_POST['topics'];
 
 $statement = $db->prepare("INSERT INTO scriptures (book, chapter, verse, content) VALUES (:book, :chapter, :verse, :content");
+
 $statement->bindValue(':book', $book);
 $statement->bindValue(':chapter', $chapter);
 $statement->bindValue(':verse', $verse);
 $statement->bindValue(':content', $content);
+$statement->execute();
 
 $statement = $db->prepare("SELECT book, chapter, verse, content FROM scriptures");
 $statement->execute();
