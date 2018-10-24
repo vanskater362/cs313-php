@@ -24,7 +24,7 @@ echo "content=$content\n";
 
 //$statement = $db->prepare('INSERT INTO scriptures (book, chapter, verse, content) VALUES (:book, :chapter, :verse, :content');
 
-$query = 'INSERT INTO scripture(book, chapter, verse, content) VALUES(:book, :chapter, :verse, :content)';
+/*$query = 'INSERT INTO scripture(book, chapter, verse, content) VALUES(:book, :chapter, :verse, :content)';
 $statement = $db->prepare($query);
 
 $statement->bindValue(':book', $book);
@@ -33,5 +33,5 @@ $statement->bindValue(':verse', $verse);
 $statement->bindValue(':content', $content);
 $statement->execute();
 
-header("Location :showTables.php");
+header("Location :showTables.php");*/
 ?>
