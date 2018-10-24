@@ -54,7 +54,7 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
 </div>
 
 <div>
-<form id="nform" method="post" action="insert.php">
+<form id="nform" method="POST" action="insert.php">
    <label id="book" for="book">Book: </label>
    <input id="bookInput" type="text" name="bookText">
    <br>
@@ -64,7 +64,7 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
    <label id="versebook" for="verse">Verse: </label>
    <input id="verseInput" type="text" name="verseText">
    <br>
-   <label id="content" for="content">Content: </label>
+   <label for="content">Content: </label>
    <textarea id="content" name="contentText" rows="3" cols="30"></textarea>
    <?php
       $statement = $db->prepare("SELECT id, name FROM topic");
