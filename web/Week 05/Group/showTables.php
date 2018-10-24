@@ -58,7 +58,7 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
    <label id="book" for="book">Book: </label>
    <input id="bookInput" type="text" name="bookText">
    <br>
-   <label id="chapter" for="chapter">Chapterk: </label>
+   <label id="chapter" for="chapter">Chapter: </label>
    <input id="chapInput" type="text" name="chapText">
    <br>
    <label id="versebook" for="verse">Verse: </label>

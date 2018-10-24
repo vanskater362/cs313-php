@@ -1,12 +1,4 @@
 <?php
-
-$book = $_POST['bookText'];
-$chapter = $_POST['chapText'];
-$verse = $_POST['verseText'];
-$content = $_POST['contentText'];
-$topics = $_POST['topics'];
-
-
 $dbUrl = getenv('DATABASE_URL');
 
 $dbopts = parse_url($dbUrl);
@@ -31,6 +23,12 @@ $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPass
 <h1>Scripture Resources</h1>
 
 <?php
+
+$book = $_POST['bookText'];
+$chapter = $_POST['chapText'];
+$verse = $_POST['verseText'];
+$content = $_POST['contentText'];
+$topics = $_POST['topics'];
 
 $statement = $db->prepare("INSERT INTO scriptures (book, chapter, verse, content) VALUES (:book, :chapter, :verse, :content");
 $statement->bindValue(':book', $book);
