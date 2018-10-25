@@ -24,7 +24,7 @@ $DEFAULT = 'DEFAULT';
 
 
 
-$query = "INSERT INTO job_name (id, name) VALUES(:DEFAULT, :jName)";
+$query = 'INSERT INTO job_name (id, name) VALUES(:DEFAULT, :jName)';
 $statement = $db->prepare($query);
 
 $statement->bindValue(':jName', $jName);
@@ -36,5 +36,5 @@ $statement = $db->prepare($query);
 
 $statement->bindValue(':jName', $jName);*/
 
-header("Location: joblist.php");
+header("Location: ../joblist.php");
 ?>
