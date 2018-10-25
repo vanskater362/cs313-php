@@ -19,10 +19,13 @@ $statement = $db->prepare($query);
 $statement->bindValue(':jName', $jName);
 $statement->execute();
 
-/*$query = 'INSERT INTO job_number(id, number) VALUES(DEFAULT, :jNumber)';
+$jNameID = $db->lastInsertId("job_name_id_seq");
+
+$query = 'INSERT INTO job_number(number, name) VALUES(:jNumber, :jNameID)';
 $statement = $db->prepare($query);
 
-$statement->bindValue(':jName', $jName);*/
+$statement->bindValue(':jNumber', $jNumber);
+$statement->bindValue(':jNameID', $jNameID);
 
 header("Location: ../joblist.php");
 ?>
