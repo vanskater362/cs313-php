@@ -28,5 +28,16 @@ $statement->bindValue(':jNumber', $jNumber);
 $statement->bindValue(':jNameID', $jNameID);
 $statement->execute();
 
+$jNumberID = $db->lastInsertId("job_number_id_seq");
+$query = 'INSERT INTO address(street, city, state, zip, number_id) VALUES(:street, :city, :state, :zip :number_id)';
+$statement = $db->prepare($query);
+
+$statement->bindValue(':street', $street);
+$statement->bindValue(':city', $city);
+$statement->bindValue(':state', $state);
+$statement->bindValue(':zip', $zip);
+$statement->bindValue(':number_id', $jNumberID);
+$statement->execute();
+
 header("Location: ../joblist.php");
 ?>
