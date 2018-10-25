@@ -26,6 +26,7 @@ $statement = $db->prepare($query);
 
 $statement->bindValue(':jNumber', $jNumber);
 $statement->bindValue(':jNameID', $jNameID);
+$statement->execute();
 
 header("Location: ../joblist.php");
 ?>
