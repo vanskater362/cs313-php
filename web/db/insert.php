@@ -8,13 +8,15 @@ $street = $_POST['street'];
 $city = $_POST['city'];
 $state = $_POST['state'];
 $zip = $_POST['zip'];
+$DEFAULT = 'DEFAULT';
 
 
 
-$query = 'INSERT INTO job_name(id, name) VALUES(DEFAULT, :jName)';
+$query = 'INSERT INTO job_name(id, name) VALUES(:DEFAULT, :jName)';
 $statement = $db->prepare($query);
 
 $statement->bindValue(':jName', $jName);
+$statement->bindValue(':DEFAULT', $DEFAULT);
 $statement->execute();
 
 /*$query = 'INSERT INTO job_number(id, number) VALUES(DEFAULT, :jNumber)';
