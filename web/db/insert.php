@@ -1,17 +1,6 @@
 <?php
-//require("db/dbConnect.php");
-//$db = get_db();
-$dbUrl = getenv('DATABASE_URL');
-   
-   $dbopts = parse_url($dbUrl);
-   
-   $dbHost = $dbopts["host"];
-   $dbPort = $dbopts["port"];
-   $dbUser = $dbopts["user"];
-   $dbPassword = $dbopts["pass"];
-   $dbName = ltrim($dbopts["path"],'/');
-   
-   $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
+require("dbConnect.php");
+$db = get_db();
 
 
 $jNumber = $_POST['jNumber'];
@@ -24,11 +13,10 @@ $DEFAULT = 'DEFAULT';
 
 
 
-$query = 'INSERT INTO job_name (id, name) VALUES(:DEFAULT, :jName)';
+$query = 'INSERT INTO job_name (name) VALUES(:jName)';
 $statement = $db->prepare($query);
 
 $statement->bindValue(':jName', $jName);
-$statement->bindValue(':DEFAULT', $DEFAULT);
 $statement->execute();
 
 /*$query = 'INSERT INTO job_number(id, number) VALUES(DEFAULT, :jNumber)';
