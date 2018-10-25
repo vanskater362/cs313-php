@@ -50,14 +50,14 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
 <div class="col-lg-4" id="createNew" style="background: lightgreen">
    <h1>Create new Job</h1>
    <hr>
-   <form id="nform" method="post" action="#">
+   <form id="nform" method="post" action="db/insert.php">
       <p id="np">
       <label id="nlabel" placeholder="Job Number" for="number">Job Number: </label>
-      <input id="ninput" type="text" name="jobNumber">
+      <input id="ninput" type="text" name="jNumber">
       </p>
       <p id="np">
-      <label id="nlabel" placeholder="Job Name" for="name">Job Name:</label>
-      <input id="ninput" type="text" name="name">
+      <label id="nlabel" placeholder="Job Name" for="jName">Job Name:</label>
+      <input id="ninput" type="text" name="jName">
       </p>
       <p id="np">
       <label id="nlabel" placeholder="street" for="street">Street:</label>
@@ -68,7 +68,7 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
       <input id="ninput" type="text" name="city">
       </p>
       <p id="np">
-      <label id="nlabel" placeholder="Texas" for="State">State:</label>
+      <label id="nlabel" placeholder="Texas" for="state">State:</label>
       <input id="ninput" type="text" name="state">
       </p>
       <p id="np">
