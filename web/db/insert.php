@@ -50,5 +50,8 @@ $statement->bindValue(':zip', $zip);
 $statement->bindValue(':number_id', $jNumberID);
 $statement->execute();
 
+$addressID = $db->lastInsertId("address_id_seq");
+echo "AddressID: $addressID ";
+
 //header("Location: ../joblist.php");
 ?>
