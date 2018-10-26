@@ -27,7 +27,7 @@
       </div>
 
    <?php
-      require("dbConnect.php");
+      require("db/dbConnect.php");
       $db = get_db();
 
       session_start();
