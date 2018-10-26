@@ -25,8 +25,8 @@
       $statement->bindValue(':jNameID', $jNameID);
       $statement->execute();
       $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-      $jNumber = $rows[0]['number'];
-      $jName = $rows[0]['name'];
+      $jNumber = $rows['number'];
+      $jName = $rows['name'];
 
       echo "jNumber =  $jNumber";
       echo "jName =  $jName";
