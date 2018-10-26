@@ -48,5 +48,5 @@ $statement->bindValue(':zip', $zip);
 $statement->bindValue(':number_id', $jNumberID);
 $statement->execute();
 
-header("Location: ../joblist.php");
+//header("Location: ../joblist.php");
 ?>
