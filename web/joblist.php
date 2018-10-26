@@ -73,7 +73,7 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
       </p>
       <p id="np">
       <label id="nlabel" placeholder="76100" for="zip">Zip:</label>
-      <input id="ninput" type="text" name="zip">
+      <input id="ninput" type="number" name="zip">
       </p>
       <input type="submit" name="submit" value="Add Job">
    </form>
