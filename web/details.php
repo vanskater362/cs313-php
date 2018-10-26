@@ -27,6 +27,9 @@
       $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
       $jNumber = $rows[0]['number'];
       $jName = $rows[0]['name'];
+
+      echo "jNumber =  $jNumber";
+      echo "jName =  $jName";
    ?>
 
 <div class="container">
