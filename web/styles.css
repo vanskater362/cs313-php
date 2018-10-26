@@ -19,3 +19,4 @@
 #ninput { display: table-cell; }
 #createNew { visibility: hidden; }
 #search { visibility: hidden; }
+#list {margin-bottom: 1px; }

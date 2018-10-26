@@ -40,7 +40,7 @@ $statement->execute();
 while ($row = $statement->fetch(PDO::FETCH_ASSOC))
 {
    echo '<ul>';
-	echo '<li><strong>' . $row['number'] . ' ' . $row['name'];
+	echo '<li id="list"><strong>' . $row['number'] . ' ' . $row['name'] . ' ' . '<a href="details.php">Details Page</a>';
    echo '</ul><hr>';
 }
 ?>
