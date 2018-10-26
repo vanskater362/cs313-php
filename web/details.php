@@ -25,8 +25,9 @@
           </ul>
         </nav>
       </div>
-<div>
+</div>
 
+<div>
 <?php
 require("dbConnect.php");
 $db = get_db();
@@ -34,3 +35,4 @@ $db = get_db();
 session_start();
 echo 'number: ' . $_SESSION['number'];
 ?>
+</div>
