@@ -33,14 +33,16 @@
 <?php
 require("db/dbConnect.php");
 $db = get_db();
+session_start();
 
 $statement = $db->prepare("SELECT job_number.number, job_name.name FROM job_name INNER JOIN job_number ON job_number.name=job_name.id");
 $statement->execute();
 
 while ($row = $statement->fetch(PDO::FETCH_ASSOC))
 {
+   $_SESSION['jobnumberID'] = $row['job_number.id'];
    echo '<ul>';
-	echo '<li id="list"><strong>' . $row['number'] . ' ' . $row['name'] . ' ' . '<a href="details.php">Details Page</a>';
+	echo '<li id="list"><strong>' . $row['number'] . ' ' . $row['name'] . ' ' . '<a href="details.php">Details</a>';
    echo '</ul><hr>';
 }
 ?>
