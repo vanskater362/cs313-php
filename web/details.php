@@ -29,7 +29,7 @@
 
 <div class="container">
       <div class="masthead">
-        <h3 class="text-muted"><?php echo $jNumber .' - ' . $jName . ' ';?>Details</h3>
+        <h3 class="text-muted"><?php echo $jNumber . ' - ' . $jName . ' ';?>Details</h3>
        <nav>
           <ul class="nav nav-justified">
             <li class="active"><a href="index.html">Home</a></li>

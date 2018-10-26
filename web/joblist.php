@@ -42,7 +42,7 @@
          {
             $id = $row['id'];
             echo '<ul>';
-	         echo '<li id="list"><strong>' . $row['number'] . ' ' . $row['name'] . ' ' . '<a href="details.php?jNameID=$id">Details</a>';
+	         echo '<li id="list"><strong>' . $row['number'] . ' ' . $row['name'] . ' ' . "<a href='details.php?jNameID=$id'>Details</a>";
             echo '</ul><hr>';
          }
          ?>
