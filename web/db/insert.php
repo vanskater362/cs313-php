@@ -53,5 +53,5 @@ $statement->execute();
 $addressID = $db->lastInsertId("address_id_seq");
 echo "AddressID: $addressID ";
 
-//header("Location: ../joblist.php");
+header("Location: ../joblist.php");
 ?>
