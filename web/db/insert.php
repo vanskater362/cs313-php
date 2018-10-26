@@ -21,7 +21,9 @@ $statement->execute();
 
 $jNameID = $db->lastInsertId("job_name_id_seq");
 
-echo "jNameID: $jNameID";
+echo "Name: $jName ";
+echo "jNameID: $jNameID ";
+echo "jNumber: $jNumber ";
 
 $query = 'INSERT INTO job_number(number, name) VALUES(:jNumber, :jNameID)';
 $statement = $db->prepare($query);
@@ -32,11 +34,11 @@ $statement->execute();
 
 $jNumberID = $db->lastInsertId("job_number_id_seq");
 
-echo "Street: $jNameID\n";
-echo "City: $jNameID\n";
-echo "State: $jNameID\n";
-echo "Zip: $jNameID\n";
-echo "jNumberID: $jNumberID\n";
+echo "Street: $street ";
+echo "City: $city ";
+echo "State: $state ";
+echo "Zip: $zip ";
+echo "jNumberID: $jNumberID ";
 
 $query = 'INSERT INTO address(street, city, state, zip, number_id) VALUES(:street, :city, :state, :zip :number_id)';
 $statement = $db->prepare($query);
