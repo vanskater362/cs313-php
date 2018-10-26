@@ -32,5 +32,5 @@ require("dbConnect.php");
 $db = get_db();
 
 session_start();
-echo $_SESSION['jobnumberId'];
+echo 'number: '$_SESSION['number'];
 ?>

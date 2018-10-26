@@ -40,7 +40,7 @@ $statement->execute();
 
 while ($row = $statement->fetch(PDO::FETCH_ASSOC))
 {
-   $_SESSION['jobnumberID'] = $row['job_number.id'];
+   $_SESSION['number'] = $row['number'];
    echo '<ul>';
 	echo '<li id="list"><strong>' . $row['number'] . ' ' . $row['name'] . ' ' . '<a href="details.php">Details</a>';
    echo '</ul><hr>';
