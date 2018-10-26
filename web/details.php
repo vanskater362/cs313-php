@@ -19,22 +19,17 @@
 
       $jNameID = htmlspecialchars($_GET['jNameID']);
 
-      echo "jNameID = " . $jNameID;
-
       $statement = $db->prepare("SELECT job_number.number, job_name.name FROM job_name INNER JOIN job_number ON job_number.name=job_name.id WHERE job_name.id=:jNameID");
       $statement->bindValue(':jNameID', $jNameID);
       $statement->execute();
       $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
       $jNumber = $rows[0]['number'];
       $jName = $rows[0]['name'];
-
-      echo "jNumber =  $jNumber";
-      echo "jName =  $jName";
    ?>
 
 <div class="container">
       <div class="masthead">
-        <h3 class="text-muted"><?php echo $jNumber . ' ' . $jName;?> Details</h3>
+        <h3 class="text-muted"><?php echo $jNumber . ' - ' . $jName;?> Details </h3>
         <nav>
           <ul class="nav nav-justified">
             <li class="active"><a href="index.html">Home</a></li>
