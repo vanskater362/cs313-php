@@ -25,9 +25,7 @@
           </ul>
         </nav>
       </div>
-</div>
 
-<div>
 <?php
 require("dbConnect.php");
 $db = get_db();
