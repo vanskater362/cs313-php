@@ -26,11 +26,11 @@
         </nav>
       </div>
 
-<?php
-require("dbConnect.php");
-$db = get_db();
+   <?php
+      require("dbConnect.php");
+      $db = get_db();
 
-session_start();
-echo 'number: ' . $_SESSION['number'];
-?>
+      session_start();
+      echo 'number: ' . $_SESSION['number'];
+   ?>
 </div>
