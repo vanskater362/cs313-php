@@ -40,14 +40,14 @@ echo "State: $state ";
 echo "Zip: $zip ";
 echo "jNumberID: $jNumberID ";
 
-$query = 'INSERT INTO address(street, city, state, zip, number_id) VALUES(:street, :city, :state, :zip :number_id)';
+$query = 'INSERT INTO address(street, city, state, zip, number_id) VALUES(:street, :city, :state, :zip :name_id)';
 $statement = $db->prepare($query);
 
 $statement->bindValue(':street', $street);
 $statement->bindValue(':city', $city);
 $statement->bindValue(':state', $state);
 $statement->bindValue(':zip', $zip);
-$statement->bindValue(':number_id', $jNumberID);
+$statement->bindValue(':name_id', $jNameID);
 $statement->execute();
 
 $addressID = $db->lastInsertId("address_id_seq");
