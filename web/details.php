@@ -19,6 +19,8 @@
 
       $jNameID = htmlspecialchars($_GET['jNameID']);
 
+      echo "jNameID = " . $jNameID;
+
       $statement = $db->prepare("SELECT job_number.number, job_name.name, job_name.id FROM job_name INNER JOIN job_number ON job_number.name=:jNameID");
       $statement->bindValue(':jNameID', $jNameID);
       $statement->execute();
