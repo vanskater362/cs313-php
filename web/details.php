@@ -32,7 +32,7 @@
         <h3 class="text-muted"><?php echo $jNumber . ' - ' . $jName;?> Details </h3>
         <nav>
           <ul class="nav nav-justified">
-            <li class="active"><a href="index.html">Home</a></li>
+            <li class="active"><a href="index.php">Home</a></li>
             <li><a href="assignments.html">Assignments</a></li>
             <li><a href="joblist.php">Job List</a></li>
           </ul>
