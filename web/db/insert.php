@@ -54,4 +54,5 @@ $addressID = $db->lastInsertId("address_id_seq");
 //echo "AddressID: $addressID ";
 
 header("Location: ../joblist.php");
+die();
 ?>

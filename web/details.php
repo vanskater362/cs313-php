@@ -66,6 +66,15 @@
                echo '</ol>';
             ?>
          </div> 
+            <form method="post" action="insert_note.php">
+               <input type="hidden" name="number_id" value="<?php echo $number_id; ?>">
+               <input type="hidden" name="name_id" value="<?php echo $name_id; ?>">
+	            <textarea name="note_text"></textarea>
+	            <input type="submit" value="Create Note">
+            </form>
+         <div>
+
+         </div>
       </div>
    </div>
 </body>
