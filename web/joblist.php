@@ -17,16 +17,16 @@
    <div class="container">
          <div class="masthead">
            <h3 class="text-muted">Job List</h3>
-         <nav>
+            <nav>
              <ul class="nav nav-justified">
                <li class="active"><a href="index.php">Home</a></li>
                <li><a href="assignments.html">Assignments</a></li>
                <li><button id="createBTN" onclick="showCreate()" type="button">Create New Job</button>
                <li><button id="searchBTN" onclick="showSearch()" type="button">Search</button>
             </ul>
-        </nav>
-      </div>
-   <div>
+            </nav>
+         </div>
+      <div>
 
       <div class="row" style="background: lightblue">
          <hr>

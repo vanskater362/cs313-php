@@ -27,7 +27,7 @@
       $jName = $rows[0]['name'];
    ?>
 
-<div class="container">
+   <div class="container">
       <div class="masthead">
         <h3 class="text-muted"><?php echo $jNumber . ' - ' . $jName;?> Details </h3>
         <nav>
@@ -38,7 +38,20 @@
           </ul>
         </nav>
       </div>
+      <div class="row" style="background: lightblue">
+         <div class="col-lg-4" style="backgroud: peach">
+            <h2>Address</h2><hr>
+            <?php
+               $statement = $db->prepare("SELECT street, city, state, zip, name FROM address INNER JOIN job_number ON number_id=job_number.id WHERE job_number.name=:jNameID")
+               $statement->bindValue(':jNameID', $jNameID);
+               $statement->execute();
+               $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
 
-</div>
+               echo '<p>'$row['street']'</p>';
+               echo '<p>'.$row['city'] . ', ' . $row['state'] . ' ' . $row['zip']';
+            ?>
+         </div>   
+      </div>
+   </div>
 </body>
 </html>
