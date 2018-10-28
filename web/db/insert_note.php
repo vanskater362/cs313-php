@@ -11,6 +11,8 @@ $statement->execute();
 $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
 $jNumberID = $rows['id'];
 
+echo $jNumberID;
+
 
 $query = 'INSERT INTO notes(user_id, number_id, name_id, note_text) VALUES(1, :number_id, :name_id, :note_text)';
 $statement = $db->prepare($query);
