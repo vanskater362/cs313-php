@@ -70,7 +70,8 @@
             <form method="post" action="db/insert_note.php">
                <input type="hidden" name="number_id" value="<?php echo $number_id; ?>">
                <input type="hidden" name="name_id" value="<?php echo $name_id; ?>">
-	            <textarea rows="5" cols="50" name="note_text"></textarea>
+               <input type="hidden" name="jNameID" value="<?php echo $jNameID; ?>">
+	            <textarea rows="5" cols="40" name="note_text"></textarea>
 	            <input type="submit" value="Create Note">
             </form>
          <div>
