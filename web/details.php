@@ -52,12 +52,11 @@
             ?>
          </div>  
          <div class="col-lg-4">
-            <h3>Notes</h3>
+            <h3>Notes</h3><hr>
             <?php
                $statement = $db->prepare("SELECT note_text, number_id, name FROM notes INNER JOIN job_number ON number_id=job_number.id WHERE job_number.name=:jNameID");
                $statement->bindValue(':jNameID', $jNameID);
                $statement->execute();
-               $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
 
                while ($rows = $statement->fetch(PDO::FETCH_ASSOC))
                   {
