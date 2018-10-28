@@ -66,23 +66,14 @@
                echo '</ol>';
             ?>
          </div>
-            <?php 
-               $statement = $db->prepare("SELECT id FROM job_number WHERE name=:jNameID");
-               $statement->bindValue(':jNameID', $jNameID, PDO::PARAM_INT);
-               $statement->execute();
-               $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
-               $jNumberID = $rows['id'];
-
-            ?>
             <h3>Insert Notes</h3><hr>
             <form method="post" action="db/insert_note.php">
                <input type="hidden" name="number_id" value="<?php echo $jNumberID; ?>">
                <input type="hidden" name="name_id" value="<?php echo $jNameID; ?>">
-	            <textarea rows="5" cols="40" name="note_text"></textarea>
+	            <textarea rows="5" cols="40" name="note_text"></textarea><br>
 	            <input type="submit" value="Create Note">
             </form>
          <div>
-
          </div>
       </div>
    </div>
