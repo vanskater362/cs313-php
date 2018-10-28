@@ -58,12 +58,12 @@
                $statement->bindValue(':jNameID', $jNameID);
                $statement->execute();
 
+               echo '<ol>';
                while ($rows = $statement->fetch(PDO::FETCH_ASSOC))
                   {
-                     echo '<ol>';
-	                  echo '<li id="list"><strong>' . $rows[0]['note_text'];
-                     echo '</ol><hr>';
+	                  echo '<li id="list"><strong>' . $rows['note_text'];
                   }
+               echo '</ol>';
             ?>
          </div> 
       </div>
