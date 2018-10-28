@@ -20,7 +20,7 @@
       $jNameID = htmlspecialchars($_GET['jNameID']);
 
       $statement = $db->prepare("SELECT job_number.number, job_name.name FROM job_name INNER JOIN job_number ON job_number.name=job_name.id WHERE job_name.id=:jNameID");
-      $statement->bindValue(':jNameID', $jNameID);
+      $statement->bindValue(':jNameID', $jNameID, PDO::PARAM_INT);
       $statement->execute();
       $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
       $jNumber = $rows[0]['number'];
@@ -43,7 +43,7 @@
             <h3>Address</h3><hr>
             <?php
                $statement = $db->prepare("SELECT street, city, state, zip, name FROM address INNER JOIN job_number ON number_id=job_number.id WHERE job_number.name=:jNameID");
-               $statement->bindValue(':jNameID', $jNameID);
+               $statement->bindValue(':jNameID', $jNameID, PDO::PARAM_INT);
                $statement->execute();
                $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
 
@@ -55,7 +55,7 @@
             <h3>Notes</h3><hr>
             <?php
                $statement = $db->prepare("SELECT note_text, number_id, name FROM notes INNER JOIN job_number ON number_id=job_number.id WHERE job_number.name=:jNameID");
-               $statement->bindValue(':jNameID', $jNameID);
+               $statement->bindValue(':jNameID', $jNameID, PDO::PARAM_INT);
                $statement->execute();
 
                echo '<ol>';
@@ -66,11 +66,18 @@
                echo '</ol>';
             ?>
          </div>
-            <h3> </h3><hr>
+            <?php 
+               $statement = $db->prepare("SELECT id, name FROM job_number WHERE name=:jNameID");
+               $statement->bindValue(':jNameID', $jNameID, PDO::PARAM_INT);
+               $statement->execute();
+               $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
+               $number_id = $rows['id'];
+
+            ?>
+            <h3>Insert Notes</h3><hr>
             <form method="post" action="db/insert_note.php">
                <input type="hidden" name="number_id" value="<?php echo $number_id; ?>">
                <input type="hidden" name="name_id" value="<?php echo $name_id; ?>">
-               <input type="hidden" name="jNameID" value="<?php echo $jNameID; ?>">
 	            <textarea rows="5" cols="40" name="note_text"></textarea>
 	            <input type="submit" value="Create Note">
             </form>

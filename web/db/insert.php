@@ -3,12 +3,12 @@ require("dbConnect.php");
 $db = get_db();
 
 
-$jNumber = $_POST['jNumber'];
-$jName = $_POST['jName'];
-$street = $_POST['street'];
-$city = $_POST['city'];
-$state = $_POST['state'];
-$zip = $_POST['zip'];
+$jNumber = htmlspecialchars($_POST['jNumber']);
+$jName = htmlspecialchars($_POST['jName']);
+$street = htmlspecialchars($_POST['street']);
+$city = htmlspecialchars($_POST['city']);
+$state = htmlspecialchars($_POST['state']);
+$zip = htmlspecialchars($_POST['zip']);
 $DEFAULT = 'DEFAULT';
 
 
@@ -16,7 +16,7 @@ $DEFAULT = 'DEFAULT';
 $query = 'INSERT INTO job_name (name) VALUES(:jName)';
 $statement = $db->prepare($query);
 
-$statement->bindValue(':jName', $jName);
+$statement->bindValue(':jName', $jName, PDO::PARAM_STR);
 $statement->execute();
 
 $jNameID = $db->lastInsertId("job_name_id_seq");
@@ -28,8 +28,8 @@ $jNameID = $db->lastInsertId("job_name_id_seq");
 $query = 'INSERT INTO job_number(number, name) VALUES(:jNumber, :jNameID)';
 $statement = $db->prepare($query);
 
-$statement->bindValue(':jNumber', $jNumber);
-$statement->bindValue(':jNameID', $jNameID);
+$statement->bindValue(':jNumber', $jNumber, PDO::PARAM_STR);
+$statement->bindValue(':jNameID', $jNameID, PDO::PARAM_INT);
 $statement->execute();
 
 $jNumberID = $db->lastInsertId("job_number_id_seq");
@@ -43,11 +43,11 @@ $jNumberID = $db->lastInsertId("job_number_id_seq");
 $query = 'INSERT INTO address(street, city, state, zip, number_id) VALUES(:street, :city, :state, :zip, :number_id)';
 $statement = $db->prepare($query);
 
-$statement->bindValue(':street', $street);
-$statement->bindValue(':city', $city);
-$statement->bindValue(':state', $state);
-$statement->bindValue(':zip', $zip);
-$statement->bindValue(':number_id', $jNumberID);
+$statement->bindValue(':street', $street, PDO::PARAM_STR);
+$statement->bindValue(':city', $city, PDO::PARAM_STR);
+$statement->bindValue(':state', $state, PDO::PARAM_STR);
+$statement->bindValue(':zip', $zip, PDO::PARAM_INT);
+$statement->bindValue(':number_id', $jNumberID, PDO::PARAM_INT);
 $statement->execute();
 
 $addressID = $db->lastInsertId("address_id_seq");
