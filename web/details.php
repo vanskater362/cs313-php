@@ -50,7 +50,24 @@
                echo '<p>' . $rows[0]['street'] . '</p>';
                echo '<p>' . $rows[0]['city'] . ', ' . $rows[0]['state'] . ' ' . $rows[0]['zip'] . '</p>';
             ?>
-         </div>   
+         </div>  
+         <div class="col-lg-4">
+            <h3>Notes</h3>
+            <?php
+               $statement = $db->prepare("SELECT note_text, number_id, name FROM notes INNER JOIN job_number ON number_id=job_number.id WHERE job_number.name=:jNameID");
+               $statement->bindValue(':jNameID', $jNameID);
+               $statement->execute();
+               $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+               while ($rowS = $statement->fetch(PDO::FETCH_ASSOC))
+                  {
+                     $id = $row['id'];
+                     echo '<ol>';
+	                  echo '<li id="list"><strong>' . $rows[0]['note_text'];
+                     echo '</ol><hr>';
+         
+            ?>
+         </div> 
       </div>
    </div>
 </body>
