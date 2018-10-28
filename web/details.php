@@ -39,7 +39,7 @@
         </nav>
       </div>
       <div class="row" style="background: lightblue">
-         <div class="col-lg-4" style="backgroud: peach">
+         <div class="col-lg-4" style="backgroud: white">
             <h2>Address</h2><hr>
             <?php
                $statement = $db->prepare("SELECT street, city, state, zip, name FROM address INNER JOIN job_number ON number_id=job_number.id WHERE job_number.name=:jNameID");
@@ -47,8 +47,8 @@
                $statement->execute();
                $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
 
-               echo '<p>'$row[0]['street']'</p>';
-               echo '<p>'.$row[0]['city'] . ', ' . $row[0]['state'] . ' ' . $row[0]['zip']'</p>';
+               echo '<p>' . $row[0]['street'] . '</p>';
+               echo '<p>' . $row[0]['city'] . ', ' . $row[0]['state'] . ' ' . $row[0]['zip'] . '</p>';
             ?>
          </div>   
       </div>
