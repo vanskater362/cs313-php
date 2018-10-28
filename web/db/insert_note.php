@@ -9,7 +9,7 @@ $statement = $db->prepare("SELECT id FROM job_number WHERE name=:jNameID");
 $statement->bindValue(':jNameID', $name_id, PDO::PARAM_INT);
 $statement->execute();
 $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
-$jNumberID = $rows['id'];
+$jNumberID = $rows[0]['id'];
 
 echo $jNumberID;
 
