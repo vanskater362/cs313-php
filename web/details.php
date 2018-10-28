@@ -42,7 +42,7 @@
          <div class="col-lg-4" style="backgroud: peach">
             <h2>Address</h2><hr>
             <?php
-               $statement = $db->prepare("SELECT street, city, state, zip, name FROM address INNER JOIN job_number ON number_id=job_number.id WHERE job_number.name=:jNameID")
+               $statement = $db->prepare("SELECT street, city, state, zip, name FROM address INNER JOIN job_number ON number_id=job_number.id WHERE job_number.name=:jNameID");
                $statement->bindValue(':jNameID', $jNameID);
                $statement->execute();
                $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
