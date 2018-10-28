@@ -22,7 +22,7 @@ $statement->bindValue(':name_id', $name_id, PDO::PARAM_INT);
 $statement->bindValue(':note_text', $note_text, PDO::PARAM_STR);
 $statement->execute();
 
-$new_page = "../details.php?jNameID=$name_id";
+$new_page = "../details.php?jNameID=$jNumberID";
 header("Location: $new_page");
 die();
 ?>
