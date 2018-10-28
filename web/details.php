@@ -61,11 +61,11 @@
 
                while ($rowS = $statement->fetch(PDO::FETCH_ASSOC))
                   {
-                     $id = $row['id'];
                      echo '<ol>';
 	                  echo '<li id="list"><strong>' . $rows[0]['note_text'];
                      echo '</ol><hr>';
-         
+                  }
+
             ?>
          </div> 
       </div>
