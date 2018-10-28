@@ -47,8 +47,8 @@
                $statement->execute();
                $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
 
-               echo '<p>'$row['street']'</p>';
-               echo '<p>'.$row['city'] . ', ' . $row['state'] . ' ' . $row['zip']';
+               echo '<p>'$row[0]['street']'</p>';
+               echo '<p>'.$row[0]['city'] . ', ' . $row[0]['state'] . ' ' . $row[0]['zip']'</p>';
             ?>
          </div>   
       </div>
