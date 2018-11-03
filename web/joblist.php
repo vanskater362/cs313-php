@@ -23,7 +23,7 @@
                   <li><a href="assignments.html">Assignments</a></li>
                   <li><button id="createBTN" onclick="showCreate()" type="button">Create New Job</button>
                   <li><button id="searchBTN" onclick="showSearch()" type="button">Search</button>
-                  <li><a href="signUp.php">Register</a> / <a href="login.php">Login</a></li>
+                  <li><a href="signUp.php">Register / Login</a></li>
                </ul>
             </nav>
          </div>

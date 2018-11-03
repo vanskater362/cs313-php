@@ -32,13 +32,25 @@
                         <div class="caption">
                             <h3>Create Your Account</h3>
                         </div>
-                        <form action="" class="loginForm">
-                            <div class="input-group">
-                                <input type="text" id="name" class="form-control" placeholder="Full Name">
-                                <input type="password" id="paw" class="form-control" placeholder="Password">
-                                <input type="submit" id="submit" class="form-control" value="Submit">
+                        <div class="panel panel-login">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <div class="col-xs-6">
+                                        <a href="#" class="active" id="login-form-link">Login</a>
+                                    </div>
+                                    <div class="col-xs-6">
+                                        <a href="#" id="register-form-link">Register</a>
+                                    </div>
+                                </div>
+                                <hr>
                             </div>
-                        </form>
+                                <form action="" class="loginForm">
+                                    <div class="input-group">
+                                        <input type="text" id="name" class="form-control" placeholder="Full Name">
+                                        <input type="password" id="paw" class="form-control" placeholder="Password">
+                                        <input type="submit" id="submit" class="form-control" value="Submit">
+                                    </div>
+                                </form>
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -50,7 +62,7 @@
                                 <li id="capital" class="invalid">At least <strong>one capital letter</strong></li>
                                 <li id="number" class="invalid">At least <strong>one number</strong></li>
                                 <li id="length" class="invalid">Be at least <strong>8 characters</strong></li>
-                                <li id="space" class="invalid">be<strong> use [~,!,@,#,$,%,^,&,*,-,=,.,;,']</strong></li>
+                                <li id="space" class="invalid"><strong> use [~,!,@,#,$,%,^,&,*,-,=,.,;,']</strong></li>
                             </ul>
                         </div>
                     </div>
@@ -58,4 +70,5 @@
             </div>
         </div>
     </div>
+</div>
 </body>
