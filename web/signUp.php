@@ -53,6 +53,7 @@
                                 </form>
                     </div>
                 </div>
+</div>
                 <div class="col-md-4">
                     <div class="aro-pswd_info">
                         <div id="pswd_info">
@@ -70,5 +71,4 @@
             </div>
         </div>
     </div>
-</div>
 </body>
