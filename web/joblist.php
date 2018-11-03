@@ -18,12 +18,13 @@
          <div class="masthead">
            <h3 class="text-muted">Job List</h3>
             <nav>
-             <ul class="nav nav-justified">
-               <li class="active"><a href="index.php">Home</a></li>
-               <li><a href="assignments.html">Assignments</a></li>
-               <li><button id="createBTN" onclick="showCreate()" type="button">Create New Job</button>
-               <li><button id="searchBTN" onclick="showSearch()" type="button">Search</button>
-            </ul>
+               <ul class="nav nav-justified">
+                  <li class="active"><a href="index.php">Home</a></li>
+                  <li><a href="assignments.html">Assignments</a></li>
+                  <li><button id="createBTN" onclick="showCreate()" type="button">Create New Job</button>
+                  <li><button id="searchBTN" onclick="showSearch()" type="button">Search</button>
+                  <li><a href="signUp.php">Register</a> / <a href="login.php">Login</a></li>
+               </ul>
             </nav>
          </div>
       <div>
