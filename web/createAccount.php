@@ -18,9 +18,9 @@
    // Get the hashed password.
    $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
-   echo "user name: " . $username . ' ' . "password: " . $hashedPassword;
+   //echo "user name: " . $username . ' ' . "password: " . $hashedPassword;
    // Connect to the database
-   require("dbConnect.php");
+   require("db/dbConnect.php");
    $db = get_db();
    $query = 'INSERT INTO public.user(username, password) VALUES(:username, :password)';
    $statement = $db->prepare($query);
