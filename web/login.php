@@ -25,17 +25,18 @@ if (isset($_POST['lname']) && isset($_POST['lpaw']))
 			// password was correct, put the user on the session, and redirect to home
          $_SESSION['username'] = $username;
          echo $username;
-			//header("Location: joblist.php");
-			//die(); // we always include a die after redirects.
+			header("Location: joblist.php");
+			die(); // we always include a die after redirects.
 		}
 		else
 		{
-			$badLogin = true;
+         echo "User not found or bad password.";
+         $badLogin = true;
 		}
 	}
 	else
 	{
-      echo "bad login maybe";
+      echo "User not found or bad password.";
       $badLogin = true;
 	}
 }
