@@ -43,14 +43,14 @@
                                 </div>
                                 <hr>
                                 </div>
-                                    <form action="" id="login-form" class="loginForm">
+                                    <form action="" method="POST" id="login-form" class="loginForm">
                                         <div class="input-group">
                                             <input type="text" id="name" class="form-control" placeholder="User Name">
                                             <input type="password" id="paw" class="form-control" placeholder="Password">
                                             <input type="submit" id="submit" class="form-control" value="Login">
                                         </div>
                                     </form>                               
-                                    <form action="" id="register-form" class="registerForm" style="display: none;">
+                                    <form action="createAccount.php" method="POST" id="register-form" class="registerForm" style="display: none;">
                                         <div class="input-group">
                                             <input type="text" id="name" class="form-control" placeholder="User Name">
                                             <input type="password" id="paw" class="form-control" placeholder="Password">
