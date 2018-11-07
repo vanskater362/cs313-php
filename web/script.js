@@ -38,7 +38,7 @@ function showCreate() {
 
  $(document).ready(function(){
 	
-	$('input[type=password]').keyup(function() {
+	$('#paw').keyup(function() {
 		var pswd = $(this).val();
 		
 		//validate the length
