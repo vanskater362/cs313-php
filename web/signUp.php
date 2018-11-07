@@ -43,7 +43,7 @@
                                 </div>
                                 <hr>
                                 </div>
-                                    <form action="" method="POST" id="login-form" class="loginForm">
+                                    <form action="login.php" method="POST" id="login-form" class="loginForm">
                                         <div class="input-group">
                                             <input type="text" id="lname" name="lname" class="form-control" placeholder="User Name">
                                             <input type="password" id="lpaw" name="lpaw" class="form-control" placeholder="Password">
