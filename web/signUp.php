@@ -45,15 +45,15 @@
                                 </div>
                                     <form action="" method="POST" id="login-form" class="loginForm">
                                         <div class="input-group">
-                                            <input type="text" id="name" class="form-control" placeholder="User Name">
-                                            <input type="password" id="paw" class="form-control" placeholder="Password">
+                                            <input type="text" id="lname" class="form-control" placeholder="User Name">
+                                            <input type="password" id="lpaw" class="form-control" placeholder="Password">
                                             <input type="submit" id="submit" class="form-control" value="Login">
                                         </div>
                                     </form>                               
                                     <form action="createAccount.php" method="POST" id="register-form" class="registerForm" style="display: none;">
                                         <div class="input-group">
-                                            <input type="text" id="name" class="form-control" placeholder="User Name">
-                                            <input type="password" id="paw" class="form-control" placeholder="Password">
+                                            <input type="text" id="rname" class="form-control" placeholder="User Name">
+                                            <input type="password" id="rpaw" class="form-control" placeholder="Password">
                                             <input type="submit" id="register" class="form-control" value="Register">
                                         </div>
                                     </form>

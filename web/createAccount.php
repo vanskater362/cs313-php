@@ -1,6 +1,6 @@
 <?php
-   $username = $_POST['name'];
-   $password = $_POST['paw'];
+   $username = $_POST['rname'];
+   $password = $_POST['rpaw'];
    if (!isset($username) || $username == ""
       || !isset($password) || $password == "")
    {

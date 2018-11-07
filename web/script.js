@@ -38,7 +38,7 @@ function showCreate() {
 
  $(document).ready(function(){
 	
-	$('#paw').keyup(function() {
+	$('#rpaw').keyup(function() {
 		var pswd = $(this).val();
 		
 		//validate the length
