@@ -1,3 +1,18 @@
+<?php
+   session_start();
+   if (isset($_SESSION['username']))
+   {
+      $username = $_SESSION['username'];
+      $userID = $_SESSION['useerID'];
+   }
+
+   else
+   {
+      header("Location: signUp.php");
+      die();
+   }
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -35,6 +50,7 @@
             <li class="active"><a href="index.php">Home</a></li>
             <li><a href="assignments.html">Assignments</a></li>
             <li><a href="joblist.php">Job List</a></li>
+            <li><a href="signOut.php"><?php echo $username?> Sign Out</a></li>
           </ul>
         </nav>
       </div>
@@ -70,6 +86,7 @@
             <form method="post" action="db/insert_note.php">
                <input type="submit" value="Create Note">
                <input type="hidden" name="name_id" value="<?php echo $jNameID; ?>">
+               <input type="hidden" name="userID" value="<?php echo $userID; ?>">
 	            <textarea rows="5" cols="40" name="note_text"></textarea><br>
             </form>
          <div>

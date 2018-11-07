@@ -11,19 +11,21 @@ if (isset($_POST['lname']) && isset($_POST['lpaw']))
 	// Connect to the DB
 	require("db/dbConnect.php");
 	$db = get_db();
-	$query = 'SELECT password FROM public.user WHERE username=:username';
+	$query = 'SELECT password, id FROM public.user WHERE username=:username';
 	$statement = $db->prepare($query);
 	$statement->bindValue(':username', $username);
 	$result = $statement->execute();
 	if ($result)
 	{
 		$row = $statement->fetch();
-		$hashedPasswordFromDB = $row['password'];
+      $hashedPasswordFromDB = $row['password'];
+      $userID = $row['id'];
 		// now check to see if the hashed password matches
 		if (password_verify($password, $hashedPasswordFromDB))
 		{
 			// password was correct, put the user on the session, and redirect to home
          $_SESSION['username'] = $username;
+         $_SESSION['userID'] = $userID;
          //echo $username;
 			header("Location: joblist.php");
 			die(); // we always include a die after redirects.

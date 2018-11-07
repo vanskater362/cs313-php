@@ -4,6 +4,7 @@ $db = get_db();
 
 $name_id = htmlspecialchars($_POST['name_id']);
 $note_text = htmlspecialchars($_POST['note_text']);
+$userID = htmlspecialchars($_POST['userID']);
 
 $statement = $db->prepare("SELECT id FROM job_number WHERE name=:jNameID");
 $statement->bindValue(':jNameID', $name_id, PDO::PARAM_INT);
@@ -12,9 +13,10 @@ $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
 $jNumberID = $rows[0]['id'];
 
 
-$query = 'INSERT INTO notes(user_id, number_id, name_id, note_text) VALUES(1, :number_id, :name_id, :note_text)';
+$query = 'INSERT INTO notes(user_id, number_id, name_id, note_text) VALUES(:userID, :number_id, :name_id, :note_text)';
 $statement = $db->prepare($query);
 
+$statement->bindValue(':userID', $userID, PDO::PARAM_INT)
 $statement->bindValue(':number_id', $jNumberID, PDO::PARAM_INT);
 $statement->bindValue(':name_id', $name_id, PDO::PARAM_INT);
 $statement->bindValue(':note_text', $note_text, PDO::PARAM_STR);
