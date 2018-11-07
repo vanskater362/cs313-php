@@ -1,3 +1,17 @@
+<?php
+   session_start();
+   if (isset($_SESSION['username']))
+   {
+      $username = $_SESSION['username'];
+   }
+
+   else
+   {
+      header("Location: signUp.php");
+      die();
+   }
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,7 +37,7 @@
                   <li><a href="assignments.html">Assignments</a></li>
                   <li><button id="createBTN" onclick="showCreate()" type="button">Create New Job</button>
                   <li><button id="searchBTN" onclick="showSearch()" type="button">Search</button>
-                  <li><a href="signUp.php">Register / Login</a></li>
+                  <li><a href="signOut.php">Sign Out</a></li>
                </ul>
             </nav>
          </div>
