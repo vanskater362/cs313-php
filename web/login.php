@@ -27,9 +27,9 @@ if (isset($_POST['lname']) && isset($_POST['lpaw']))
          $_SESSION['username'] = $username;
          $_SESSION['userID'] = $userID;
          //echo $username;
-         echo $userID;
-			//header("Location: joblist.php");
-			//die(); // we always include a die after redirects.
+         //echo $userID;
+			header("Location: joblist.php");
+			die(); // we always include a die after redirects.
 		}
 		else
 		{
