@@ -23,9 +23,10 @@ if (isset($_POST['lname']) && isset($_POST['lpaw']))
 		if (password_verify($password, $hashedPasswordFromDB))
 		{
 			// password was correct, put the user on the session, and redirect to home
-			$_SESSION['username'] = $username;
-			header("Location: joblist.php");
-			die(); // we always include a die after redirects.
+         $_SESSION['username'] = $username;
+         echo $username;
+			//header("Location: joblist.php");
+			//die(); // we always include a die after redirects.
 		}
 		else
 		{
@@ -34,7 +35,8 @@ if (isset($_POST['lname']) && isset($_POST['lpaw']))
 	}
 	else
 	{
-		$badLogin = true;
+      echo "bad login maybe";
+      $badLogin = true;
 	}
 }
 ?>
