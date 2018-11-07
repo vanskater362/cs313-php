@@ -20,9 +20,9 @@ $statement->bindValue(':userID', $userID, PDO::PARAM_INT)
 $statement->bindValue(':number_id', $jNumberID, PDO::PARAM_INT);
 $statement->bindValue(':name_id', $name_id, PDO::PARAM_INT);
 $statement->bindValue(':note_text', $note_text, PDO::PARAM_STR);
-$statement->execute();
 echo $query;
-/*$new_page = "../details.php?jNameID=$name_id";
+/*$statement->execute();
+$new_page = "../details.php?jNameID=$name_id";
 header("Location: $new_page");
 die();*/
 ?>
