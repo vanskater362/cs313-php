@@ -1,4 +1,6 @@
 <?php
+   require("password.php")
+
    $username = $_POST['rname'];
    $password = $_POST['rpaw'];
    if (!isset($username) || $username == ""
