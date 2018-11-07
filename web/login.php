@@ -24,7 +24,7 @@ if (isset($_POST['lname']) && isset($_POST['lpaw']))
 		{
 			// password was correct, put the user on the session, and redirect to home
          $_SESSION['username'] = $username;
-         echo $username;
+         //echo $username;
 			header("Location: joblist.php");
 			die(); // we always include a die after redirects.
 		}
