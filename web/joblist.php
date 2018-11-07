@@ -37,7 +37,7 @@
                   <li><a href="assignments.html">Assignments</a></li>
                   <li><button id="createBTN" onclick="showCreate()" type="button">Create New Job</button>
                   <li><button id="searchBTN" onclick="showSearch()" type="button">Search</button>
-                  <li><a href="signOut.php">Sign Out</a></li>
+                  <li><a href="signOut.php"><?php $username?> Sign Out</a></li>
                </ul>
             </nav>
          </div>
