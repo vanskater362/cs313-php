@@ -16,7 +16,7 @@
 <body>
    <div class="container">
         <div class="masthead">
-            <h3 class="text-muted">Create Account</h3>
+            <h3 class="text-muted">Register / Login</h3>
             <nav>
                 <ul class="nav nav-justified">
                 <li class="active"><a href="index.php">Home</a></li>
@@ -30,7 +30,7 @@
                 <div class="col-md-4 col-md-offset-4 text-center">
                     <div class="search-box">
                         <div class="caption">
-                            <h3>Create Your Account</h3>
+                            <h3>Register / Login</h3>
                         </div>
                         <div class="panel panel-login">
                             <div class="panel-heading">
@@ -51,7 +51,7 @@
                                             <input type="submit" id="submit" class="form-control" value="Login">
                                         </div>
                                     </form>                               
-                                    <form action="" id="register-form" class="registerForm">
+                                    <form action="" id="register-form" class="registerForm" style="display: none;">
                                         <div class="input-group">
                                             <input type="text" id="name" class="form-control" placeholder="User Name">
                                             <input type="password" id="paw" class="form-control" placeholder="Password">
