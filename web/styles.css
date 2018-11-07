@@ -74,6 +74,16 @@ a:hover { text-decoration: none }
   
 }
 
+.registerForm input[type=text], .registerForm input[type=password]{
+   margin-bottom:10px;
+ }
+ .registerForm input[type=submit]{
+   background:#fb044a;
+   color:#fff;
+   font-weight:700;
+   
+ }
+
 
 #pswd_info {
   background: #dfdfdf none repeat scroll 0 0;

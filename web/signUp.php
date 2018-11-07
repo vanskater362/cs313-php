@@ -43,17 +43,26 @@
                                     </div>
                                 </div>
                                 <hr>
-                            </div>
-                                <form action="" class="loginForm">
-                                    <div class="input-group">
-                                        <input type="text" id="name" class="form-control" placeholder="Full Name">
-                                        <input type="password" id="paw" class="form-control" placeholder="Password">
-                                        <input type="submit" id="submit" class="form-control" value="Submit">
-                                    </div>
-                                </form>
+                                </div>
+                                    <form action="" id="login-form" class="loginForm">
+                                        <div class="input-group">
+                                            <input type="text" id="name" class="form-control" placeholder="User Name">
+                                            <input type="password" id="paw" class="form-control" placeholder="Password">
+                                            <input type="submit" id="submit" class="form-control" value="Login">
+                                        </div>
+                                    </form>
+                                </div>
+                                </div>
+                                    <form action="" id="register-form" class="registerForm">
+                                        <div class="input-group">
+                                            <input type="text" id="name" class="form-control" placeholder="User Name">
+                                            <input type="password" id="paw" class="form-control" placeholder="Password">
+                                            <input type="submit" id="register" class="form-control" value="Register">
+                                        </div>
+                                    </form>
+                                </div>
+                        </div>
                     </div>
-                </div>
-</div>
                 <div class="col-md-4">
                     <div class="aro-pswd_info">
                         <div id="pswd_info">
