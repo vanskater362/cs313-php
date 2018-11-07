@@ -5,16 +5,16 @@ $db = get_db();
 $name_id = htmlspecialchars($_POST['name_id']);
 $userID = htmlspecialchars($_POST['userID']);
 $note_text = htmlspecialchars($_POST['note_text']);
-echo $userID;
 
-/*$statement = $db->prepare("SELECT id FROM job_number WHERE name=:jNameID");
+$statement = $db->prepare("SELECT id FROM job_number WHERE name=:jNameID");
 $statement->bindValue(':jNameID', $name_id, PDO::PARAM_INT);
 $statement->execute();
 $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
 $jNumberID = $rows[0]['id'];
 
+echo $userID;
 
-$query = 'INSERT INTO notes(user_id, number_id, name_id, note_text) VALUES(:userID, :number_id, :name_id, :note_text)';
+/*$query = 'INSERT INTO notes(user_id, number_id, name_id, note_text) VALUES(:userID, :number_id, :name_id, :note_text)';
 $statement = $db->prepare($query);
 
 $statement->bindValue(':userID', $userID, PDO::PARAM_INT)
