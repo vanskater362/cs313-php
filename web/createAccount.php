@@ -17,6 +17,8 @@
    $username = htmlspecialchars($username);
    // Get the hashed password.
    $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+
+   echo "user name: " . $username . ' ' . "password: " . $hashedPassword;
    // Connect to the database
    require("dbConnect.php");
    $db = get_db();
