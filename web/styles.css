@@ -84,6 +84,11 @@ a:hover { text-decoration: none }
    
  }
 
+ .panel-login>.panel-heading a.active{
+	color: #029f5b;
+	font-size: 18px;
+}
+
 
 #pswd_info {
   background: #dfdfdf none repeat scroll 0 0;
