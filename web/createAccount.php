@@ -4,7 +4,7 @@
    $username = $_POST['rname'];
    $password = $_POST['rpaw'];
 
-   echo "user name: " . $username . ' ' . "password: " . $password;
+   //echo "user name: " . $username . ' ' . "password: " . $password;
 
    /*if (!isset($username) || $username == ""
       || !isset($password) || $password == "")
@@ -29,6 +29,6 @@
    $statement->bindValue(':password', $hashedPassword);
    $statement->execute();
    // finally, redirect them to the sign in page
-   //header("Location: signUp.php");
-   //die();
+   header("Location: signUp.php");
+   die();
 ?>
