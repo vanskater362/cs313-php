@@ -15,16 +15,16 @@
 
 <body>
    <div class="container">
-         <div class="masthead">
-         <h3 class="text-muted">Create Account</h3>
-         <nav>
-            <ul class="nav nav-justified">
-               <li class="active"><a href="index.php">Home</a></li>
-               <li><a href="assignments.html">Assignments</a></li>
-               <li><a href="joblist.php">Job List</a></li>
-            </ul>
-         </nav>
-         </div>
+        <div class="masthead">
+            <h3 class="text-muted">Create Account</h3>
+            <nav>
+                <ul class="nav nav-justified">
+                <li class="active"><a href="index.php">Home</a></li>
+                <li><a href="assignments.html">Assignments</a></li>
+                <li><a href="joblist.php">Job List</a></li>
+                </ul>
+            </nav>
+        </div>
             <div class="container">
             <div class="row">
                 <div class="col-md-4 col-md-offset-4 text-center">
@@ -50,9 +50,7 @@
                                             <input type="password" id="paw" class="form-control" placeholder="Password">
                                             <input type="submit" id="submit" class="form-control" value="Login">
                                         </div>
-                                    </form>
-                                </div>
-                                </div>
+                                    </form>                               
                                     <form action="" id="register-form" class="registerForm">
                                         <div class="input-group">
                                             <input type="text" id="name" class="form-control" placeholder="User Name">
