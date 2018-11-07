@@ -3,7 +3,7 @@
    if (isset($_SESSION['username']))
    {
       $username = $_SESSION['username'];
-      $userID = $_SESSION['useerID'];
+      $userID = $_SESSION['userID'];
    }
 
    else
