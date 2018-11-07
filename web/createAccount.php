@@ -3,12 +3,15 @@
 
    $username = $_POST['rname'];
    $password = $_POST['rpaw'];
-   if (!isset($username) || $username == ""
+
+   echo "user name: " . $username . ' ' . "password: " . $password;
+
+   /*if (!isset($username) || $username == ""
       || !isset($password) || $password == "")
    {
       header("Location: signUp.php");
       die(); // we always include a die after redirects.
-   }
+   }*/
    // Let's not allow HTML in our usernames. It would be best to also detect this before
    // submitting the form and preven the submission.
    $username = htmlspecialchars($username);
@@ -26,6 +29,6 @@
    $statement->bindValue(':password', $hashedPassword);
    $statement->execute();
    // finally, redirect them to the sign in page
-   header("Location: signUp.php");
-   die();
+   //header("Location: signUp.php");
+   //die();
 ?>
